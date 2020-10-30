@@ -1,0 +1,25 @@
+{
+    "name": "mvc",
+    "require": {
+        "php": ">=7.0"
+    },
+    
+    "minimus-stability": "alpha",
+    "authors": [
+        {
+            "name": "LT CLOUD",
+            "email": "contato@ltcloud.com.br"
+        }
+    ],
+    
+    "autoload": {
+        "psr-4": {
+            "MVC\\": "vendor/MVC/",
+            "App\\": "App/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+    
+}
