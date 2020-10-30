@@ -24,7 +24,7 @@ class DaoArtigos{
 
             $p_sql->execute();
             return $this->db->lastInsertId();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
         }
     }
@@ -40,7 +40,7 @@ class DaoArtigos{
             $p_sql->bindValue(":Id", $obj->getId());
 
             return $p_sql->execute();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
         }
     }
@@ -52,7 +52,7 @@ class DaoArtigos{
             $p_sql->bindValue(":Id", $cod);
 
             return $p_sql->execute();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
         }
     }
@@ -64,7 +64,7 @@ class DaoArtigos{
             $p_sql->bindValue(":cod", $cod);
             $p_sql->execute();
             return $this->populaObj($p_sql->fetch(\PDO::FETCH_ASSOC));
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
         }
     }
@@ -81,7 +81,7 @@ class DaoArtigos{
             }
                 return $obj;
             
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
         }
     }
@@ -94,7 +94,7 @@ class DaoArtigos{
             
             return $p_sql->rowCount();
             
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
         }
     }
@@ -112,7 +112,7 @@ class DaoArtigos{
             }
                 return $obj;
             
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde.".$e->getMessage();
         }
     }
@@ -132,7 +132,7 @@ class DaoArtigos{
             }
                 return $obj;
             
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde.".$e->getMessage();
         }
     }
@@ -154,7 +154,7 @@ class DaoArtigos{
             //print_r($result);
             return $result;
         }
-        catch (Exception $e)
+        catch (\Exception $e)
         {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde.".$e->getMessage();
         }
