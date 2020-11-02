@@ -5,7 +5,7 @@ namespace App;
 class Init{
     public static function getDB() {
         $db = new \PDO('mysql:host=localhost;'
-                                    . 'dbname=ltcloud',
+                                    . 'dbname=websalesiano',
                                       'root', '');
         return $db;
     }
