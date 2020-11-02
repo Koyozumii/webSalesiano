@@ -27,6 +27,43 @@ class DaoAlunos{
         }
     }
 
+    public function Editar(Alunos $obj)
+    {
+        try{
+            $sql = "UPDATE aluno SET 
+            projeto_idProjeto = :projeto,
+            curso_idCurso = :curso,
+            nome = :nome,
+            ra = :ra.
+            senha = :senha
+            WHERE idAluno = :id";
+
+            $stmt = $this->db->prepare($sql);
+            $this->populaValues($stmt, $obj);
+            $stmt->bindValue(":id", $obj->getIDAluno);
+
+            return $stmt->execute();
+
+        }catch(\Exception $e)
+        {
+            print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
+        }
+    }
+
+    public function Deletar($idaluno)
+    {
+        try{
+            $sql = "DELETE FROM alunos WHERE idaluno = :idaluno";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindValue(":idaluno", $idaluno);
+            return $stmt->execute();
+
+        }catch(\Exception $e)
+        {
+            print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
+        }
+    }
+
 
     private function populaObj($row) {
         $pojo = new Alunos();
