@@ -28,7 +28,7 @@ class DaoDev
 
             $p_sql->execute();
             return $this->db->lastInsertId();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
         }
     }
@@ -46,7 +46,7 @@ class DaoDev
             $p_sql->bindValue(":Id", $obj->getId());
 
             return $p_sql->execute();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
         }
     }
@@ -60,7 +60,7 @@ class DaoDev
             $p_sql->bindValue(":Id", $cod);
 
             return $p_sql->execute();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
         }
     }
@@ -72,7 +72,7 @@ class DaoDev
             $p_sql->bindValue(":cod", $cod);
             $p_sql->execute();
             return $this->populaObj($p_sql->fetch(\PDO::FETCH_ASSOC));
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
         }
     }
@@ -88,7 +88,7 @@ class DaoDev
             }
             return $obj;
 
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
         }
     }
@@ -101,7 +101,7 @@ class DaoDev
 
             return $p_sql->rowCount();
 
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
         }
     }
@@ -121,7 +121,7 @@ class DaoDev
             }
             return $obj;
 
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde.".$e->getMessage();
         }
     }
@@ -136,12 +136,12 @@ class DaoDev
             $p_sql->bindParam(':limit', $limit, \PDO::PARAM_INT);
             $p_sql->execute();
             $obj = [];
-            while ($row = $p_sql->fetch(PDO::FETCH_ASSOC)){
+            while ($row = $p_sql->fetch(\PDO::FETCH_ASSOC)){
                 $obj[] = $this->populaObj($row);
             }
             return $obj;
 
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde.".$e->getMessage();
         }
     }
@@ -163,7 +163,7 @@ class DaoDev
             //print_r($result);
             return $result;
         }
-        catch (Exception $e)
+        catch (\Exception $e)
         {
             print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde.".$e->getMessage();
         }

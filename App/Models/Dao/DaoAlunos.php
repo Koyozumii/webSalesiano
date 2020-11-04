@@ -50,6 +50,24 @@ class DaoAlunos{
         }
     }
 
+    public function verificaLogin($ra, $senha)
+    {
+        try{
+            $sql = "SELECT * from aluno WHERE
+                    ra = :ra and senha = :senha";
+
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindValue(":ra", $ra);
+            $stmt->bindValue("senha", $senha);
+
+            return $this->populaObj($stmt->fetch(\PDO::FETCH_ASSOC));
+
+        }catch(\Exception $e)
+        {
+            print "error-Ocorreu um erro ao tentar executar esta ação, tente novamente mais tarde. ".$e->getMessage();
+        }
+    }
+
     public function Deletar($idaluno)
     {
         try{
