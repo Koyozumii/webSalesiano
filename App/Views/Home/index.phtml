@@ -261,15 +261,15 @@
       </div>
       <div class="modal-body">
       <div class="md-form mb-5">
-          <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="email" id="defaultForm-email" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
+        
+          <input type="text" id="ra" name="ra" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">RA</label>
         </div>
 
         <div class="md-form mb-4">
-          <i class="fas fa-lock prefix grey-text"></i>
-          <input type="password" id="defaultForm-pass" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+       
+          <input type="password" id="senha" name="senha" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Senha</label>
         </div>
 
       </div>
@@ -279,7 +279,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Logar</button>
+        <button type="button" class="btn btn-primary" id="logar">Logar</button>
       </div>
     </div>
   </div>
@@ -291,6 +291,29 @@
 
      modal.modal('show');
   });
+
+  $('#logar').on('click', function(){
+    let formData = new FormData;
+    let ra = $('input[name=ra]').val();
+    let senha = $('input[name=senha]').val();
+    formData.append('ra', ra );
+    formData.append('senha', senha);
+
+    $.ajax({
+      type: "POST",
+      url: "/Login/logar",
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function(data) {
+          if(data == true){
+            alert('Voce logou');
+          }else{
+            alert('Login ou senha incorretors');
+          }
+      }
+    })
+  })
 
   
 
