@@ -196,7 +196,7 @@
         <div class="card text-center">
           <div class="card-body p-4">
             <h3>Notícia 1</h3>
-            <p class="my-3 lead"><img src="2test.jpg"> &nbsp;</p> <a class="btn btn-link" href="https://unisalesiano.com.br/aracatuba/docente-de-engenharia-do-unisalesiano-vence-campeonato-entre-hackers/" target="_blank">Ler mais<br></a>
+            <p class="my-3 lead"><img src="/images/2test.jpg"> &nbsp;</p> <a class="btn btn-link" href="https://unisalesiano.com.br/aracatuba/docente-de-engenharia-do-unisalesiano-vence-campeonato-entre-hackers/" target="_blank">Ler mais<br></a>
           </div>
         </div>
       </div>
@@ -204,7 +204,7 @@
         <div class="card text-center">
           <div class="card-body p-4">
             <h3>Notícia 2</h3>
-            <p class="my-3 lead"><img src="1test.jpg"></p> <a class="btn btn-link" href="https://unisalesiano.com.br/aracatuba/unisalesiano-promovera-a-6a-edicao-do-outubro-rosa-pet-por-meio-de-agendamento/" target="_blank">Ler mais</a>
+            <p class="my-3 lead"><img src="/images/1test.jpg"></p> <a class="btn btn-link" href="https://unisalesiano.com.br/aracatuba/unisalesiano-promovera-a-6a-edicao-do-outubro-rosa-pet-por-meio-de-agendamento/" target="_blank">Ler mais</a>
           </div>
         </div>
       </div>
@@ -212,7 +212,7 @@
         <div class="card text-center">
           <div class="card-body p-4">
             <h3>Notícia 3<br></h3>
-            <p class="my-3 lead">&nbsp;<img src="3test.jpg"></p> <a class="btn btn-link" href="https://unisalesiano.com.br/aracatuba/1o-congresso-medico-interligas-do-unisalesiano-tera-como-tema-central-a-saude-da-mulher/" target="_blank">Ler mais</a>
+            <p class="my-3 lead">&nbsp;<img src="/images/3test.jpg"></p> <a class="btn btn-link" href="https://unisalesiano.com.br/aracatuba/1o-congresso-medico-interligas-do-unisalesiano-tera-como-tema-central-a-saude-da-mulher/" target="_blank">Ler mais</a>
           </div>
         </div>
       </div>
@@ -259,62 +259,42 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <form action="/Home/logar" method="post">
       <div class="modal-body">
-      <div class="md-form mb-5">
         
+        <div class="md-form mb-5">
+
           <input type="text" id="ra" name="ra" class="form-control validate">
           <label data-error="wrong" data-success="right" for="defaultForm-email">RA</label>
         </div>
 
         <div class="md-form mb-4">
-       
+
           <input type="password" id="senha" name="senha" class="form-control validate">
           <label data-error="wrong" data-success="right" for="defaultForm-pass">Senha</label>
         </div>
 
       </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-default">Login</button>
-      </div>
-      </div>
-      <div class="modal-footer">
+      <div class="modal-footer d-flex">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" id="logar">Logar</button>
+        <button type="submit" class="btn btn-primary" id="logar">Logar</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
+</div>
 
 <script>
-  $('#abreModal').on('click', function(){
-     var modal = $('#modalLogin');
+  $('#abreModal').on('click', function() {
+    var modal = $('#modalLogin');
 
-     modal.modal('show');
+    modal.modal('show');
   });
 
-  $('#logar').on('click', function(){
-    let formData = new FormData;
-    let ra = $('input[name=ra]').val();
-    let senha = $('input[name=senha]').val();
-    formData.append('ra', ra );
-    formData.append('senha', senha);
-
-    $.ajax({
-      type: "POST",
-      url: "/Login/logar",
-      data: formData,
-      processData: false,
-      contentType: false,
-      success: function(data) {
-          if(data == true){
-            alert('Voce logou');
-          }else{
-            alert('Login ou senha incorretors');
-          }
-      }
-    })
+  $('#logar').on('click', function ()
+  {
+    console.log('Clicou');
   })
-
-  
 
 </script>
