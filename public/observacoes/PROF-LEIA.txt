@@ -1,0 +1,10 @@
+Professor, boa noite. 
+Estou criando o projeto com base no modelo MVC. Atualmente estou apenas com a parte do aluno, esperando o design da página de login com o pessoal do design para continuar com o desenvolvimento.
+
+- Na pasta PUBLIC, dentro da pasta OBSERVACOES tem o print da modelagem que fiz do banco, juntamente com o script.
+- Vou deixar aqui o link do projeto no GITHub, caso o senhor queira acompanhar os desenvolvimentos, e, se puder, peço que deixe algumas observações nos desenvolvimentos.
+- Como foi uma decisão dos outros 2 integrantes, cada um está fazendo o seu. Peço perdão por não realizar a outra entrega, na semana da mesma fiquei pelo menos 5 dias sem internet.
+Caso eles queiram ou seja uma decisão de sua parte, não tenho problemas com eles se juntando ao projeto, na verdade me ajudaria bastante porque além do meu trabalho, tenho outros desenvolvimentos da faculdade pra fazer, o que não me deixa tanto tempo restante pro Projeto Comunitário.
+- Uma última coisa, essa modelo é de um projeto antigo que eu estava estudando, reaproveitei o esqueleto, então existem alguns arquivos que não estão sendo utilizados. (Deixei a parte do código totalmente comentada)
+
+Essas eram as considerações, obrigado.
